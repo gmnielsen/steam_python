@@ -19,8 +19,11 @@ int input;
 int r = 0;
 
 int d = 250; // in seconds
-
+int red = 50;
+int green = 0;
+int blue = 0;
 void setup() {
+  
 
 #if defined (__AVR_ATtiny85__)
   if (F_CPU == 16000000) clock_prescale_set(clock_div_1);
@@ -52,7 +55,7 @@ void loop() {
       for(int i=0;i<NUMPIXELS;i++){
 
     // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
-    pixels.setPixelColor(i, pixels.Color(0,50,0));
+    pixels.setPixelColor(i, pixels.Color(red,green,blue));
     pixels.show();
     
   }
@@ -62,6 +65,7 @@ void loop() {
    for(int i=0;i<NUMPIXELS;i++){
     pixels.setPixelColor(i, pixels.Color(0,0,0));
     pixels.show();
+    
   }
   delay(d);
   }
