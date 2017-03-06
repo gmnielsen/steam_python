@@ -29,10 +29,9 @@ void setup() {
 
   pixels.begin();
 //setting up the pins you're using
-pinMode(13, OUTPUT);
-pinMode(12, OUTPUT);
 //setting up the serial monitor
 Serial.begin(9600);
+
 }
 
 
@@ -41,20 +40,21 @@ void loop() {
   if (Serial.available() > 0) {
   //reads whats in the serial and sets it equal to the int input
   input = Serial.read();
-  //prints what it is so you can know what different letters equal
   Serial.print(input);
+  //prints what it is so you can know what different letters equal
   } 
   else {
   // tests to see if it equals a, if it does it executes whats under it, 
   // if it does not equal 97 it goes to the else  
   } if ( input == 97){
     //turns the digital output to on
-    for( int x=0; x>4; x++){
+    for( int x=0; x<3; x++){
       for(int i=0;i<NUMPIXELS;i++){
 
     // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
     pixels.setPixelColor(i, pixels.Color(0,50,0));
     pixels.show();
+    
   }
     //delays .5 seconds
     delay(d);
@@ -63,7 +63,7 @@ void loop() {
     pixels.setPixelColor(i, pixels.Color(0,0,0));
     pixels.show();
   }
- 
+  delay(d);
   }
   }
   else {
