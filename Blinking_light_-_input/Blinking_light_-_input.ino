@@ -49,7 +49,7 @@ void loop() {
   // if it does not equal 97 it goes to the else  
   } if ( input == 97){
     //turns the digital output to on
-    for( int x=0; x>4; ++){
+    for( int x=0; x>4; x++){
       for(int i=0;i<NUMPIXELS;i++){
 
     // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
@@ -65,9 +65,10 @@ void loop() {
   }
  
   }
+  }
   else {
   }
-  }
+  
   //writes 0 in the serial
   Serial.write(r);
 }
